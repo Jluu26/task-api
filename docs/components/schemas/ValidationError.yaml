@@ -7,4 +7,4 @@ properties:
     type: array
     items:
       type: string
-
+    example: ["ID must be a number"]

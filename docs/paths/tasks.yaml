@@ -1,7 +1,7 @@
 get:
   summary: List all tasks
   tags:
-    - tasks
+    - Tasks
   parameters:
     - name: completed
       in: query
@@ -26,10 +26,11 @@ get:
             type: array
             items:
               $ref: ../components/schemas/Task.yaml
+
 post:
   summary: Create a new task
   tags:
-    - tasks
+    - Tasks
   requestBody:
     required: true
     content:
@@ -44,4 +45,8 @@ post:
           schema:
             $ref: ../components/schemas/Task.yaml
     '400':
-      $ref: ../components/responses/BadRequest.yaml
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ValidationError.yaml
