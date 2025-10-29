@@ -91,7 +91,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BadRequest'
+                $ref: '#/components/schemas/NotFoundError'
 components:
   schemas:
     Task:
@@ -119,9 +119,16 @@ components:
             type: string
           example:
             - ID must be a number
+    NotFoundError:
+      type: object
+      properties:
+        error:
+          type: string
+          example: Task not found
+  responses:
     BadRequest:
       description: Invalid input
       content:
         application/json:
           schema:
-            $ref: ../schemas/ValidationError.yaml
+            $ref: '#/components/schemas/ValidationError'

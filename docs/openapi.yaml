@@ -22,5 +22,9 @@ components:
       $ref: ./components/schemas/Task.yaml
     ValidationError:
       $ref: ./components/schemas/ValidationError.yaml
+    NotFoundError:
+      $ref: ./components/schemas/NotFoundError.yaml
+
+  responses:
     BadRequest:
       $ref: ./components/responses/BadRequest.yaml
